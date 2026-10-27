@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-new-tab"
+description = "Enables the new_tab command without any pre-configured scope."
+commands.allow = ["new_tab"]
+
+[[permission]]
+identifier = "deny-new-tab"
+description = "Denies the new_tab command without any pre-configured scope."
+commands.deny = ["new_tab"]

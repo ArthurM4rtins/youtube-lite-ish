@@ -1,0 +1,18 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "youtube",
+  "description": "YouTube tabs may only open links/tabs, toggle fullscreen and drive the mini player window",
+  "webviews": ["tab-*"],
+  "remote": {
+    "urls": ["https://www.youtube.com/*", "https://youtube.com/*", "https://m.youtube.com/*"]
+  },
+  "permissions": [
+    "allow-open-external",
+    "allow-new-tab",
+    "allow-close-current",
+    "allow-cycle-tab",
+    "allow-set-fullscreen",
+    "allow-start-drag",
+    "allow-set-mini"
+  ]
+}

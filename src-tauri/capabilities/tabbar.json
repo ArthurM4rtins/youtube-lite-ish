@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "tabbar",
+  "description": "The local tab bar may only manage tabs",
+  "webviews": ["tabbar"],
+  "permissions": ["allow-new-tab", "allow-close-tab", "allow-activate-tab", "allow-cycle-tab"]
+}

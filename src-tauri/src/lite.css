@@ -1,0 +1,121 @@
+/* ---------- Side menu: only Home, Subscriptions and History ---------- */
+ytd-guide-renderer ytd-guide-entry-renderer:not(:has(> a#endpoint[href="/"], > a#endpoint[href="/feed/subscriptions"], > a#endpoint[href="/feed/history"])),
+ytd-guide-renderer #guide-section-title,
+ytd-guide-renderer #footer,
+ytd-mini-guide-entry-renderer:not(:has(a[href="/"], a[href="/feed/subscriptions"]))
+{
+    display: none !important;
+}
+
+ytd-guide-renderer ytd-guide-section-renderer
+{
+    border-bottom: none !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* ---------- Top bar: no keyboard icon, voice search or "Criar" button ---------- */
+ytd-masthead [class*="TextInputAssistant"],
+ytd-masthead #voice-search-button,
+ytd-masthead #buttons > ytd-button-renderer
+{
+    display: none !important;
+}
+
+/* ---------- Account menu: Google account, switch account, sign out and appearance only ---------- */
+/* Scoped by the theme item so notifications and sub-pages (which reuse this renderer) are untouched */
+ytd-multi-page-menu-renderer:has(ytd-toggle-theme-compact-link-renderer) #sections > :not(:first-child):not(:has(ytd-toggle-theme-compact-link-renderer)),
+ytd-multi-page-menu-renderer:has(ytd-toggle-theme-compact-link-renderer) #sections > :has(ytd-toggle-theme-compact-link-renderer) ytd-compact-link-renderer,
+ytd-multi-page-menu-renderer:has(ytd-toggle-theme-compact-link-renderer) #footer
+{
+    display: none !important;
+}
+
+/* ---------- Watch page, below the player: title, channel row and description only ---------- */
+ytd-watch-flexy #below #alerts,
+ytd-watch-flexy #below #messages,
+ytd-watch-flexy #below #clarify-box,
+ytd-watch-flexy #below #expandable-metadata,
+ytd-watch-flexy #below #ticket-shelf,
+ytd-watch-flexy #below #merch-shelf,
+ytd-watch-flexy #below #shopping-timely-shelf,
+ytd-watch-metadata ytd-metadata-row-container-renderer,
+ytd-watch-metadata #bottom-actions,
+ytd-watch-metadata #comment-teaser,
+ytd-watch-metadata #teaser-carousel,
+ytd-watch-metadata ytd-structured-description-content-renderer
+{
+    display: none !important;
+}
+
+/* ---------- Comments: pinned only ---------- */
+ytd-comments ytd-comments-header-renderer,
+ytd-comments ytd-comment-thread-renderer:not(:has(#pinned-comment-badge ytw-pinned-comment-badge-renderer, #pinned-comment-badge ytd-pinned-comment-badge-renderer)),
+ytd-comments #contents > ytd-continuation-item-renderer,
+ytd-comments #continuations
+{
+    display: none !important;
+}
+
+/* ---------- Shorts: gone everywhere (feeds, search, related, channel tab) ---------- */
+ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+ytd-rich-shelf-renderer[is-shorts],
+ytd-reel-shelf-renderer,
+ytd-rich-item-renderer:has(ytm-shorts-lockup-view-model),
+grid-shelf-view-model:has(ytm-shorts-lockup-view-model),
+ytm-shorts-lockup-view-model,
+ytm-shorts-lockup-view-model-v2,
+yt-lockup-view-model:has(a[href^="/shorts/"]),
+ytd-video-renderer:has(a[href^="/shorts/"]),
+ytd-grid-video-renderer:has(a[href^="/shorts/"]),
+yt-tab-shape[tab-title="Shorts"]
+{
+    display: none !important;
+}
+
+/* ---------- Mini player drag bar (shown on hover) ---------- */
+#yt-lite-dragbar
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 36px;
+    z-index: 2147483647;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 6px;
+    box-sizing: border-box;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), transparent);
+    opacity: 0;
+    transition: opacity 0.15s;
+    cursor: move;
+}
+
+#yt-lite-dragbar:hover
+{
+    opacity: 1;
+}
+
+#yt-lite-dragbar button
+{
+    all: unset;
+    cursor: pointer;
+    color: #fff;
+    font: 600 13px/1 Roboto, Arial, sans-serif;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* ---------- Right column: recommendations only (playlist panel stays when watching a playlist) ---------- */
+ytd-watch-flexy #secondary #panels,
+ytd-watch-flexy #secondary #chat-container,
+ytd-watch-flexy #secondary #donation-shelf,
+ytd-watch-flexy #secondary #player-ads,
+ytd-watch-flexy #secondary #offer-module,
+ytd-watch-flexy #secondary yt-related-chip-cloud-renderer
+{
+    display: none !important;
+}
